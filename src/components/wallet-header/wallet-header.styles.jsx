@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const WalletHeaderContainer = styled.div`
   height: 20rem;
-  padding: 0.75em 0;
+  padding: 0.75em;
   /* border: solid 1px white; */
 
   display: flex;
@@ -34,7 +34,7 @@ export const WalletHeaderContainer = styled.div`
   .btns-container {
     display: flex;
     gap: 2.5rem;
-    margin: 3rem 0 0 0;
+    margin: 2rem 0;
 
     .btn-container {
       display: flex;

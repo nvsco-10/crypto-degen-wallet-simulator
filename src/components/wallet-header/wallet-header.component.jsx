@@ -15,7 +15,6 @@ export const WalletHeader = () => {
         <p>My Wallet</p>
       </div>
       <div className="btns-container">
-
         <div className="btn-container">
           <div className="icon-btn">
             <BiPlus className="icon" />
