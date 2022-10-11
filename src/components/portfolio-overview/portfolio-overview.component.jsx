@@ -1,7 +1,10 @@
+import { 
+  PortfolioOverviewContainer, 
+  ButtonContainer, 
+  IconButton 
+} from "./portfolio-overview.styles"
 
-import { PortfolioOverviewContainer, ButtonContainer, IconButton } from "./portfolio-overview.styles"
 import { CgOptions } from "react-icons/cg"
-
 import { TRANSACTION_LINKS } from "../../utils/transaction-links"
 
 export const PortfolioOverview = () => {
@@ -23,7 +26,7 @@ export const PortfolioOverview = () => {
             <IconButton to={link.path}>
               {link.icon}
             </IconButton>
-            <p>BUY</p>
+            <p>{link.label}</p>
           </ButtonContainer>
         )
       })}

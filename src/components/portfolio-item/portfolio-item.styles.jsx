@@ -41,8 +41,12 @@ export const Stats = styled.div`
       color: var(--light-grey);
     }
 
-    .change {
+    .positive {
       color: var(--dark-green);
+    }
+
+    .negative {
+      color: var(--red);
     }
   } 
 `

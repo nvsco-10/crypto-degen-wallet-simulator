@@ -5,6 +5,8 @@ import {
   Stats 
 } from "./portfolio-item.styles";
 
+import { formatAmount } from "../../utils/format-amount";
+
 export const PortfolioItem = ({ title, price, change, img, qty, symbol }) => {
   return (
     <PortfolioItemContainer>
@@ -16,13 +18,17 @@ export const PortfolioItem = ({ title, price, change, img, qty, symbol }) => {
           <p className="title">{title}</p>
           <div className="price-container">
             <p className="price">${price}</p>
-            <p className="change">{`${Math.sign(change) === 1 ? `+${change}` : `-${change}`}`}%</p>
+            <p 
+              className={`change ${Math.sign(change) === 1 ? "positive" : "negative"}`}
+            >
+              {`${Math.sign(change) === 1 ? `+${change}` : `-${change}`}`}%
+            </p>
           </div>
         </Stats>
       </MarketInfo>
       <MarketValue>
-        <p className="quantity">{qty} {symbol}</p>
-        <p className="value">${qty*price}</p>
+        <p className="quantity">{formatAmount(qty,'qty')} {symbol}</p>
+        <p className="value">${formatAmount(qty*price)}</p>
       </MarketValue>
     </PortfolioItemContainer>
   )

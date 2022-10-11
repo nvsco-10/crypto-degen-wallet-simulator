@@ -50,6 +50,7 @@ export const ButtonContainer = styled.div`
 
   p {
     font-size: var(--text-xsmall);
+    text-transform: uppercase;
   }
 `
 

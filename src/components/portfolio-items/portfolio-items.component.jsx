@@ -15,7 +15,7 @@ const ITEMS = [
     id: 2,
     title: 'Bitcoin',
     price: 52000,
-    change: 4.12,
+    change: -4.12,
     img: "https://bitcoin.org/img/icons/opengraph.png?1664356125",
     qty: 0.215,
     symbol: 'BTC',
@@ -26,7 +26,7 @@ const ITEMS = [
     price: 52000,
     change: 4.12,
     img: "https://bitcoin.org/img/icons/opengraph.png?1664356125",
-    qty: 1,
+    qty: 0.000544392,
     symbol: 'BTC',
   },
 ]
