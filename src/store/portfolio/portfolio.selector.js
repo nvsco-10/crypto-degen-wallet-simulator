@@ -11,3 +11,11 @@ export const selectPortfolioMarketData = createSelector(
   [selectPortfolioReducer],
   (portfolio) => portfolio.portfolioMarketData
 )
+
+export const selectPortfolioBalance = createSelector(
+  [selectPortfolioMarketData], 
+  (portfolioData) => portfolioData.reduce(
+    (total, portfolioItem) => total + portfolioItem.qty * portfolioItem.current_price,
+    0
+  )
+)

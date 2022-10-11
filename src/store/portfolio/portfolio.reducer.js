@@ -27,7 +27,7 @@ export const portfolioReducer = (state = INITIAL_STATE, action) => {
         portfolioMarketData: payload,
         isLoading: false,
       }
-    case PORTFOLIO_ACTION_TYPES.FETCH_MARKET_PORTFOLIO_DATA_FAILED:
+    case PORTFOLIO_ACTION_TYPES.FETCH_PORTFOLIO_MARKET_DATA_FAILED:
       return {
         ...state,
         error: payload,
