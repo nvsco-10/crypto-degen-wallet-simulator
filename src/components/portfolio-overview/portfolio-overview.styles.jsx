@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const WalletHeaderContainer = styled.div`
+import { Link } from "react-router-dom"
+
+export const PortfolioOverviewContainer = styled.div`
   height: 20rem;
   padding: 0.75em;
   /* border: solid 1px white; */
@@ -36,27 +38,32 @@ export const WalletHeaderContainer = styled.div`
     gap: 2.5rem;
     margin: 2rem 0;
 
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .icon-btn {
-      margin-bottom: .75rem;
-      width: 55px;
-      background-color: var(--dark-blue);
-      border-radius: 8%;
-    }
-
-    .icon {
-      font-size: 2.7rem;
-    }
-
-    p {
-      font-size: var(--text-xsmall);
-    }
   }
 
+`
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: var(--text-xsmall);
+  }
+`
+
+export const IconButton = styled(Link)`
+  background-color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin-bottom: .75rem;
+  border-radius: 8%;
+
+  color: var(--font-white);
+  font-size: 2.5rem;
+  
 `
