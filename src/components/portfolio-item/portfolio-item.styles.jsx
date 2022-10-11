@@ -13,7 +13,7 @@ export const PortfolioItemContainer = styled.div`
       width: 45px;
     }
 
-    .title, .quantity {
+    .name, .quantity {
       font-size: var(--text-medium);
     }
 `
@@ -28,7 +28,7 @@ export const Stats = styled.div`
   flex-direction: column;
   margin-left: 1rem;
 
-  .title {
+  .name {
     margin-bottom: 0.15em;
   }
 
@@ -58,6 +58,7 @@ export const MarketValue = styled.div`
   align-items: flex-end;
 
   .value {
+    font-size: var(--text-xsmall);
     color: var(--light-grey);
   }
 `
