@@ -1,7 +1,7 @@
 import { PORTFOLIO_ACTION_TYPES } from "./portfolio.types";
 
 const INITIAL_STATE = {
-  portfolioItems: [],
+  portfolioItems: [{id: 'tether', qty: 5000}],
   portfolioMarketData: [],
   isLoading: false,
   error: null,
