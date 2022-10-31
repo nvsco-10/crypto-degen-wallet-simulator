@@ -5,66 +5,34 @@ import { Link } from "react-router-dom"
 export const PortfolioOverviewContainer = styled.div`
   height: 20rem;
   padding: 0.75em;
+  background-color: var(--background-dark500);
   /* border: solid 1px white; */
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .settings-container {
-    width: 100%;
+  .btn-container {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 2rem;
-
-    .icon {
-      font-size: 2rem;
-    }
-  }
-
-  .total-balance-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
-    .total-balance {
-      font-size: 2.4rem;
-    }
-  }
-
-  .btns-container {
-    display: flex;
-    gap: 2.5rem;
-    margin: 2rem 0;
-
   }
 
 `
 
-export const ButtonContainer = styled.div`
+export const SettingsContainer = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 
-  p {
-    font-size: var(--text-xsmall);
-    text-transform: uppercase;
+  .icon {
+    font-size: 1.5rem;
   }
 `
 
-export const IconButton = styled(Link)`
-  background-color: var(--dark-blue);
+export const ButtonsContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  margin-bottom: .75rem;
-  border-radius: 8%;
-
-  color: var(--font-white);
-  font-size: 2.5rem;
-  
+  gap: 2.5rem;
+  margin: 2rem 0;
 `

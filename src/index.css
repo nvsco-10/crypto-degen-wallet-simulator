@@ -6,10 +6,11 @@
 
 :root {
   --background-dark500: #000;
-  --background-dark400: rgba(45, 46, 51, 0.342);
+  --background-dark400: rgb(7, 7, 7);
   --dark-blue: #141c52;
   --dark-green: rgb(34, 150, 30);
   --red: rgb(200, 44, 44);
+  --dark-grey: rgb(33, 33, 34);
   --light-grey: rgb(172, 172, 172);
   --border-dark: #2c2a2a;
   --font-white: #fff;
@@ -19,10 +20,11 @@
 }
 
 body {
+  /* position: relative; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: var(--background-dark500);
+  background-color: rgb(19, 17, 17);
   color: var(--font-white);
   height: 100vh;
 }
@@ -35,11 +37,36 @@ img {
   height: 100%;
 }
 
+input, select {
+  width: 100%;
+  border: none;
+  font-size: inherit;
+  padding: 0.35em;
+  background-color: var(--dark-grey);
+  color: var(--font-white);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.65em 0.75em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
 .icon-btn {
+  cursor: pointer;
   padding: 0.35em
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.icon {
+  color: var(--font-white);
+}
+
+
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
 }

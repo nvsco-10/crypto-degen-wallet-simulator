@@ -12,6 +12,12 @@ export const selectPortfolioMarketData = createSelector(
   (portfolio) => portfolio.portfolioMarketData
 )
 
+
+export const selectTetherData = createSelector(
+  [selectPortfolioReducer],
+  (portfolio) => portfolio.portfolioMarketData.find(item => item.id === "tether")
+)
+
 export const selectPortfolioBalance = createSelector(
   [selectPortfolioMarketData], 
   (portfolioData) => portfolioData.reduce(

@@ -31,8 +31,49 @@ export const portfolioReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         error: payload,
-        isLoading: true,
+        isLoading: false,
       }
+
+    case PORTFOLIO_ACTION_TYPES.ADD_ITEM_TO_PORTFOLIO_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+
+    case PORTFOLIO_ACTION_TYPES.ADD_ITEM_TO_PORTFOLIO_SUCCESS:
+      return {
+        ...state,
+        portfolioItems: payload,
+        isLoading: false,
+      }
+
+    case PORTFOLIO_ACTION_TYPES.ADD_ITEM_TO_PORTFOLIO_FAILED:
+      return {
+        ...state,
+        error: payload,
+        isLoading: false,
+      }
+
+    case PORTFOLIO_ACTION_TYPES.REMOVE_ITEM_FROM_PORTFOLIO_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+
+    case PORTFOLIO_ACTION_TYPES.REMOVE_ITEM_FROM_PORTFOLIO_SUCCESS:
+      return {
+        ...state,
+        portfolioItems: payload,
+        isLoading: false,
+      }
+      
+    case PORTFOLIO_ACTION_TYPES.REMOVE_ITEM_FROM_PORTFOLIO_FAILED:
+      return {
+        ...state,
+        error: payload,
+        isLoading: false,
+      }
+
     default: 
       return state;
   }
