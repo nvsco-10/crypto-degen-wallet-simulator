@@ -1,17 +1,42 @@
 import { useState } from "react"
-import Select from "react-select"
+import Select, { SingleValue, ActionMeta } from "react-select"
 
 import { TransactionSelectCoinContainer, CoinInfoContainer, CurrentPrice, CoinName } from "./transaction-select-coin.styles"
 
 import { customStyles } from "../../utils/react-select/custom-styles.utils"
 
-export const TransactionSelectCoin = ({ options, coinData, handleSelect }) => {
+type Option = {
+  value: string,
+  label: string
+}
+
+type CoinData = {
+  id: string,
+  name: string,
+  img: string,
+  current_price: number,
+  symbol: string
+}
+
+type TransactionSelectCoinProps = {
+  options: Option[],
+  coinData: CoinData,
+  handleSelect: (option: Option | null, actionMeta: ActionMeta<Option>) => void
+}
+
+export const TransactionSelectCoin = ({ 
+  options, 
+  coinData, 
+  handleSelect 
+}: TransactionSelectCoinProps) => {
   const { name, img, symbol } = coinData
   const [isSearchable] = useState(true)
 
   return (
     <TransactionSelectCoinContainer>
+
       <label>Select coin:</label>
+
       <Select
         name="id"
         onChange={handleSelect}
@@ -19,7 +44,9 @@ export const TransactionSelectCoin = ({ options, coinData, handleSelect }) => {
         options={options} 
         isSearchable={isSearchable}
       />
+
       <CoinInfoContainer>
+
         <CoinName>
           {coinData && (
             <>
@@ -28,13 +55,16 @@ export const TransactionSelectCoin = ({ options, coinData, handleSelect }) => {
             </>
           )}
         </CoinName>
+
         <CurrentPrice>
           Current price:
           <span className="price">
             ${coinData.current_price ? coinData?.current_price : "-"}
           </span>
         </CurrentPrice>
+        
       </CoinInfoContainer>
+
     </TransactionSelectCoinContainer>
   )
 

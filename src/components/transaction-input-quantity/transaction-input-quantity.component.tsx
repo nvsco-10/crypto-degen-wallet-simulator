@@ -1,24 +1,30 @@
+import { ChangeEvent } from "react"
 import { InputQuantityContainer } from "./transaction-input-quantity.styles";
 
-export const TransactionInputQuantity = ({ formData, handleInputChange, handleMax }) => {
+type TransactionInputQuantityProps = {
+  qty: number,
+  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void,
+  handleMax: () => void
+}
+
+export const TransactionInputQuantity = ({ 
+  qty, 
+  handleInputChange, 
+  handleMax 
+}: TransactionInputQuantityProps) => {
   return (
     <InputQuantityContainer>
       <label>Quantity:</label>
       <div className="quantity-container">
         <input 
           name="qty"
-          value={formData.qty}
+          value={qty}
           onChange={handleInputChange}
         />
         <button onClick={handleMax}>
           max
         </button>
       </div>
-      {/* <div className="alert">
-      {
-        showAlert && 'Please enter a valid quantity!'
-      }
-      </div> */}
     </InputQuantityContainer>
   )
 }

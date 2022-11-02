@@ -20,4 +20,7 @@ const composedEnhancers = compose(applyMiddleware(...middlewares))
 
 export const store = createStore(persistedReducer, composedEnhancers)
 
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
 export const persistor = persistStore(store)

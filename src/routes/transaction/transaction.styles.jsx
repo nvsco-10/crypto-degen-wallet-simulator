@@ -20,19 +20,3 @@ export const TransactionHeader = styled.div`
     font-size: 1.5rem;
   }
 `
-
-export const TransactionForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`
-
-export const BalanceContainer = styled.div`
-  align-self: flex-end;
-  margin-bottom: 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-`

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const AlertContainer = styled.div`
-   background-color: yellow;
+  background-color: yellow;
   font-size: var(--text-xsmall);
   color: black;
   display: block;
