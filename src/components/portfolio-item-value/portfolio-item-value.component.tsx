@@ -16,7 +16,7 @@ export const PortfolioItemValue = ({ symbol, qty, price }: PortfolioItemValuePro
   return (
     <PortfolioItemValueContainer>
       <Quantity>
-        {formatAmount(qty,'qty')} 
+        {formatAmount(qty,'dollar')} 
         <span className="symbol">{symbol}</span>
       </Quantity>
       <Value>
