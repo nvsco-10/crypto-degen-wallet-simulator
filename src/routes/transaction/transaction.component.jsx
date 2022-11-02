@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 
 import { addItemToPortfolioAsync, removeItemFromPortfolioAsync } from "../../store/portfolio/portfolio.action"
 import { selectTetherData, selectPortfolioItems } from "../../store/portfolio/portfolio.selector"
-
-import { selectTransactionType } from "../../store/transaction/transaction.selector"
+import { setDisplayAlert } from "../../store/transaction/transaction.action"
+import { selectTransactionType, selectShowAlert } from "../../store/transaction/transaction.selector"
 
 import { TransactionSelectCoin } from "../../components/transaction-select-coin/transaction-select-coin.component"
 import { TransactionInputQuantity } from "../../components/transaction-input-quantity/transaction-input-quantity.component"
@@ -44,7 +44,7 @@ export const Transaction = () => {
   const [totalCost, setTotalCost] = useState(0)
   const [endingBalance, setEndingBalance] = useState(0)
   const [isDisabled, setIsDisabled] = useState(true)
-  const [showAlert, setShowAlert] = useState(false)
+  const showAlert = useSelector(selectShowAlert)
 
   const portfolioItems = useSelector(selectPortfolioItems)
   const tetherData = useSelector(selectTetherData)
@@ -87,13 +87,13 @@ export const Transaction = () => {
     setEndingBalance(balance)
   }, [totalCost])
 
-  const showAlertBox = () => {
-    setShowAlert(true)
+  // const showAlertBox = () => {
+  //   setShowAlert(true)
 
-    setTimeout(() => {
-      setShowAlert(false)
-    }, 2000)
-  }
+  //   setTimeout(() => {
+  //     setShowAlert(false)
+  //   }, 2000)
+  // }
 
   const handleSelect = (e,action) => {
     setFormData({...formData, [action.name]: e.value})
@@ -128,7 +128,7 @@ export const Transaction = () => {
 
   const handleSubmit = () => {
     if (!formData.id || !formData.price || isNaN(formData.qty) || formData.qty <= 0) {
-      showAlertBox()
+      dispatch(setDisplayAlert())
       return
     }
     if (transactionType === 'buy') {
@@ -138,7 +138,7 @@ export const Transaction = () => {
     if (transactionType === 'sell') {
       const existingPortfolioItem = portfolioItems.find(item => item.id === formData.id)
       if(!existingPortfolioItem) {
-        showAlertBox()
+        dispatch(setDisplayAlert('You don\'t own this coin!'))
         return
       }
 

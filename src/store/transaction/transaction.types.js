@@ -1,3 +1,5 @@
 export const TRANSACTION_ACTION_TYPES = {
   SET_TRANSACTION_TYPE: 'transaction/SET_TRANSACTION_TYPE',
+  DISPLAY_ALERT: 'transaction/DISPLAY_ALERT',
+  CLEAR_ALERT: 'transaction/CLEAR_ALERT'
 }

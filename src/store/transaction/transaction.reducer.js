@@ -1,7 +1,9 @@
 import { TRANSACTION_ACTION_TYPES } from "./transaction.types";
 
 const INITIAL_STATE = {
-  transactionType: ''
+  transactionType: '',
+  showAlert: false,
+  alertText: ''
 }
 
 export const transactionReducer = (state = INITIAL_STATE, action) => {
@@ -12,6 +14,20 @@ export const transactionReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         transactionType: payload,
+      }
+
+    case TRANSACTION_ACTION_TYPES.DISPLAY_ALERT:
+      return {
+        ...state,
+        showAlert: true,
+        alertText: payload || 'Please provide all values!'
+      }
+
+    case TRANSACTION_ACTION_TYPES.CLEAR_ALERT:
+      return {
+        ...state,
+        showAlert: false,
+        alertText: ''
       }
 
     default: 
